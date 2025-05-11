@@ -1,0 +1,78 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cybersecurity Awareness</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Cybersecurity Breach Awareness</h1>
+        <nav class="menu_box">
+          <menu>
+              <li><a href="#">Home</a></li>
+              <li><a href="breaches.html">Breaches</a></li>
+              <li><a href="#">Mitigations</a></li>
+              <li><a href="index.html">Interactive</a></li>
+              <li><a href="about.html">About</a></li>
+          </menu>
+        </nav>
+      </header>
+      <div class = "container">
+        <div class="breach_box">
+          <h2>Data Breach Aggregator</h2>
+          <form
+            action="https://haveibeenpwned.com/api/v3/breaches"
+            class="box main_form"
+          >
+            <label for="breach">Search by breach name</label>
+            <input type="text" name="breach" id="breach" />
+            <div class="buttons">
+              <!-- <button type="button" id="data_load">Load Breaches</button>
+              <button type="button" id="data_clear">Clear Breaches</button> -->
+              <button type="button" id="data_refresh">Load/Refresh All Data</button>
+              <button type="button" id="generate" class ="hidden">Generate List</button>
+            </div>
+          </form>
+          <div class="chart_container">
+            <div class = "sorter">
+            <label for="sort-breaches">Sort breaches by: </label>
+            <select id="sort-breaches">
+              <option value="sort" select>Choose an Option</option>
+              <option value="asc">Most Users Affected</option>
+              <option value="desc">Least Users Affected</option>
+              <option value="recent">Most Recent</option>
+              <option value="oldest">Oldest</option>
+            </select>
+          </div>
+            <canvas id="myChart"></canvas>
+          </div>
+          <ol class="box" id="breach_list">
+            A list of prominent cybersecurity breaches
+          </ol>
+          <div class="lds-ellipsis" id="load_animation">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    </div>
+    <footer class = "footer">
+      Github link is
+      <a
+        href="https://github.com/hkane21/Cybersecurity-Awareness-Project"
+        target="_blank"
+        rel="noopener noreferrer"
+        >here</a
+      >
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
